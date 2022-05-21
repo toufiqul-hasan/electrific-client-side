@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Blog = () => {
+const Login = () => {
   return (
     <div className='py-16 z-0'>
-      <h1>Blog</h1>
+      <h1>Login</h1>
     </div>
   );
 };
 
-export default Blog;
+export default Login;
