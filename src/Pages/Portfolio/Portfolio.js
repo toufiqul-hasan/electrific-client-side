@@ -3,9 +3,9 @@ import React from "react";
 const Portfolio = () => {
   return (
     <div className="container mx-auto my-14 z-0 text-left">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="text-2xl font-bold">Md. Toufiqul Hasan</h2>
+      <div className="card">
+        <div className="card-body">
+          <h2 className="text-2xl font-bold">Md. Toufiqul Hasan</h2>
           <p>
             <a
               target="_blank"
