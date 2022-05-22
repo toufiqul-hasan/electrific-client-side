@@ -2,10 +2,10 @@ import React from "react";
 
 const BusinessSummary = () => {
   return (
-    <div>
+    <div className="text-center">
       <h1 className="text-3xl font-bold">Business Summary</h1>
-      <div className="lg:grid grid-cols-4">
-        <div className="card py-5">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 py-5">
+        <div className="card">
           <div className="stat-figure text-secondary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ const BusinessSummary = () => {
           <div className="stat-value text-secondary">20K+</div>
           <div className="stat-desc">30% more than last year</div>
         </div>
-        <div className="card py-5">
+        <div className="card">
           <div className="stat-figure text-secondary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ const BusinessSummary = () => {
           <div className="stat-value text-secondary">10M+</div>
           <div className="stat-desc">20% more than last year</div>
         </div>
-        <div className="card py-5">
+        <div className="card">
           <div className="stat-figure text-secondary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ const BusinessSummary = () => {
           <div className="stat-value text-secondary">1K+</div>
           <div className="stat-desc">25% more than last year</div>
         </div>
-        <div className="card py-5">
+        <div className="card">
           <div className="stat-figure text-secondary">
             <svg
               xmlns="http://www.w3.org/2000/svg"

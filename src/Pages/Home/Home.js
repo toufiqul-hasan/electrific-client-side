@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "./Banner";
 import BusinessSummary from "./BusinessSummary";
+import WhyUs from "./WhyUs";
 
 const Home = () => {
   return (
@@ -8,8 +9,11 @@ const Home = () => {
       <div>
         <Banner />
       </div>
-      <div className="py-10 text-center">
+      <div className="py-10">
         <BusinessSummary />
+      </div>
+      <div>
+        <WhyUs />
       </div>
     </div>
   );
