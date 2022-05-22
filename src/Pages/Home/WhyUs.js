@@ -5,7 +5,7 @@ const WhyUs = () => {
     <div>
       <h1 className="text-3xl font-bold text-center py-5">Why Choose Us</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 px-10">
-        <div className="card card-side bg-primary text-white drop-shadow h-24">
+        <div className="card card-side bg-primary text-white shadow-2xl h-24">
           <figure>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ const WhyUs = () => {
             <p className="mt-[-5px]">We provide world wide free shipping</p>
           </div>
         </div>
-        <div className="card card-side bg-secondary text-white drop-shadow h-24">
+        <div className="card card-side bg-secondary text-white shadow-2xl h-24">
           <figure>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@ const WhyUs = () => {
             <p className="mt-[-5px]">We provide 100% money back guarantee</p>
           </div>
         </div>
-        <div className="card card-side bg-primary text-white drop-shadow h-24">
+        <div className="card card-side bg-primary text-white shadow-2xl h-24">
           <figure>
             <svg
               xmlns="http://www.w3.org/2000/svg"
