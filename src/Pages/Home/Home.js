@@ -2,16 +2,20 @@ import React from "react";
 import Banner from "./Banner";
 import BusinessSummary from "./BusinessSummary";
 import Quote from "./Quote";
+import WhyChooseUs from "./WhyChooseUs";
 import WhyUs from "./WhyUs";
 
 const Home = () => {
   return (
-    <div className="py-16">
+    <div className="mt-16">
       <div>
         <Banner />
       </div>
-      <div className="py-10">
+      <div className="mt-10">
         <BusinessSummary />
+      </div>
+      <div>
+        <WhyChooseUs />
       </div>
       <div>
         <WhyUs />

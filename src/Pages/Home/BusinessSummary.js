@@ -4,7 +4,7 @@ const BusinessSummary = () => {
   return (
     <div className="text-center">
       <h1 className="text-3xl font-bold">Business Summary</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 py-5">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 mt-10">
         <div className="card">
           <div className="stat-figure text-secondary">
             <svg
