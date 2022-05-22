@@ -1,9 +1,10 @@
 import React from "react";
+import "./Home.css";
 import Banner from "./Banner";
 import BusinessSummary from "./BusinessSummary";
 import Quote from "./Quote";
 import WhyChooseUs from "./WhyChooseUs";
-import WhyUs from "./WhyUs";
+import AboutCompany from "./AboutCompany";
 
 const Home = () => {
   return (
@@ -18,7 +19,7 @@ const Home = () => {
         <WhyChooseUs />
       </div>
       <div>
-        <WhyUs />
+        <AboutCompany />
       </div>
       <div>
         <Quote />

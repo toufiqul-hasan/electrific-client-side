@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import chart from "../../Assets/Images/chart.png";
 
-const WhyUs = () => {
+const AboutCompany = () => {
   return (
-    <div className="mt-20 p-5 bg-base-200">
-      <h1 className="text-3xl font-bold text-center mt-10">Why Us</h1>
+    <div className="mt-20 p-5 bg-base-200 section-title">
+      <h1 className="text-3xl font-bold text-center mt-10">About Company</h1>
       <div className="hero mt-5">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img src={chart} alt="" />
@@ -37,4 +37,4 @@ const WhyUs = () => {
   );
 };
 
-export default WhyUs;
+export default AboutCompany;

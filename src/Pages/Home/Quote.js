@@ -10,7 +10,7 @@ const Quote = () => {
   };
 
   return (
-    <div className="py-10 px-10">
+    <div className="py-10 px-10 section-title">
       <h1 className="text-3xl font-bold text-center py-10">Request A Quote</h1>
       <div className="card lg:card-side drop-shadow py-10 2xl:pl-96">
         <figure>

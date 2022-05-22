@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyChooseUs = () => {
   return (
-    <div>
+    <div className="section-title">
       <h1 className="text-3xl font-bold text-center mt-20">Why Choose Us</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 px-10 mt-10">
         <div className="card card-side bg-primary text-white shadow-2xl h-24">

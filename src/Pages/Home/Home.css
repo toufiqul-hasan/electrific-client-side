@@ -1,0 +1,9 @@
+.section-title h1:after {
+  background-color: #F47629;
+  display: block;
+  height: 2px;
+  content: " ";
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
