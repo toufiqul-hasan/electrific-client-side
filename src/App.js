@@ -6,10 +6,11 @@ import Blog from "./Pages/Blog/Blog";
 import Home from "./Pages/Home/Home";
 import NotFound from "./Pages/NotFound/NotFound";
 import Navbar from "./Shared/Navbar";
+import Footer from "./Shared/Footer";
 
 function App() {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
