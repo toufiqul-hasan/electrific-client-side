@@ -15,13 +15,7 @@ const Navbar = () => {
   const menuItems = (
     <>
       <li>
-        {user ? (
-          <NavLink to="/home" onClick={logout}>
-            {user?.displayName}
-          </NavLink>
-        ) : (
-          <NavLink to="/home">Home</NavLink>
-        )}
+        <NavLink to="/home">Home</NavLink>
       </li>
       <li>
         <NavLink to="/blog">Blog</NavLink>
@@ -31,13 +25,15 @@ const Navbar = () => {
       </li>
       <li>
         {user ? (
-          <NavLink to="/login" onClick={logout}>
-            Sign Out
-          </NavLink>
+          <Link to="/login" onClick={logout}>
+            Logout
+          </Link>
         ) : (
           <NavLink to="/login">Login</NavLink>
         )}
       </li>
+      <li>{user && <NavLink to="/dashboard">Dashboard</NavLink>}</li>
+      <li>{user && <Link to="/">{user?.displayName}</Link>}</li>
     </>
   );
   return (
@@ -73,7 +69,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
-        <ul className="font-black menu menu-horizontal p-0">{menuItems}</ul>
+        <ul className="font-black menu menu-horizontal p-0 gap-x-2">{menuItems}</ul>
       </div>
       <div className="navbar-end">
         <label

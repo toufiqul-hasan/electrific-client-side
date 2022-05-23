@@ -10,6 +10,11 @@ import NotFound from "./Pages/NotFound/NotFound";
 import Navbar from "./Shared/Navbar";
 import Footer from "./Shared/Footer";
 import SignUp from "./Pages/Auth/SignUp";
+import RequireAuth from "./Pages/Auth/RequireAuth";
+import Dashboard from "./Pages/Dashboard/Dashboard.js";
+import Profile from "./Pages/Dashboard/Profile";
+import Reviews from "./Pages/Dashboard/Reviews";
+import Orders from "./Pages/Dashboard/Orders";
 
 function App() {
   return (
@@ -22,6 +27,11 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
+        <Route index element={<Profile/>}></Route>
+        <Route path="orders" element={<Orders />}></Route>
+        <Route path="reviews" element={<Reviews />}></Route>
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
