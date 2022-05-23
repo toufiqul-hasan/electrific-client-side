@@ -27,10 +27,17 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
-        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
-        <Route index element={<Profile/>}></Route>
-        <Route path="orders" element={<Orders />}></Route>
-        <Route path="reviews" element={<Reviews />}></Route>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route index element={<Profile />}></Route>
+          <Route path="orders" element={<Orders />}></Route>
+          <Route path="reviews" element={<Reviews />}></Route>
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

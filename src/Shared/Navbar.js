@@ -7,7 +7,6 @@ import { signOut } from "firebase/auth";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
   const logout = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
@@ -43,16 +42,14 @@ const Navbar = () => {
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              className="h-6 w-6"
+              viewBox="0 0 20 20"
+              fill="currentColor"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
+                fillRule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clipRule="evenodd"
               />
             </svg>
           </label>
@@ -69,26 +66,26 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
-        <ul className="font-black menu menu-horizontal p-0 gap-x-2">{menuItems}</ul>
+        <ul className="font-black menu menu-horizontal p-0 gap-x-2">
+          {menuItems}
+        </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end lg:hidden">
         <label
           tabIndex="1"
           htmlFor="dashboard-sidebar"
-          className="btn btn-ghost lg:hidden"
+          className="btn btn-ghost"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+            className="h-6 w-6"
+            viewBox="0 0 20 20"
+            fill="currentColor"
           >
             <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h8m-8 6h16"
+              fillRule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clipRule="evenodd"
             />
           </svg>
         </label>
