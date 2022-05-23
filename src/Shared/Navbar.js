@@ -1,12 +1,27 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../Assets/Images/logo.png";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+  console.log(user);
+  const logout = () => {
+    signOut(auth);
+    localStorage.removeItem("accessToken");
+  };
   const menuItems = (
     <>
       <li>
-        <NavLink to="/home">Home</NavLink>
+        {user ? (
+          <NavLink to="/home" onClick={logout}>
+            {user?.displayName}
+          </NavLink>
+        ) : (
+          <NavLink to="/home">Home</NavLink>
+        )}
       </li>
       <li>
         <NavLink to="/blog">Blog</NavLink>
@@ -15,7 +30,13 @@ const Navbar = () => {
         <NavLink to="/portfolio">Portfolio</NavLink>
       </li>
       <li>
-        <NavLink to="/login">Login</NavLink>
+        {user ? (
+          <NavLink to="/login" onClick={logout}>
+            Sign Out
+          </NavLink>
+        ) : (
+          <NavLink to="/login">Login</NavLink>
+        )}
       </li>
     </>
   );

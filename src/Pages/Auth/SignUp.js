@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
@@ -7,7 +7,7 @@ import {
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../../Shared/Loading";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToken from "../../Hooks/useToken";
 
 const SignUp = () => {
@@ -19,13 +19,21 @@ const SignUp = () => {
     handleSubmit,
   } = useForm();
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   const [token] = useToken(user || googleUser);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [token, from, navigate]);
 
   let signInError;
 
@@ -41,10 +49,6 @@ const SignUp = () => {
         </small>
       </p>
     );
-  }
-
-  if (token) {
-    navigate("/");
   }
 
   const onSubmit = async (data) => {
@@ -156,8 +160,9 @@ const SignUp = () => {
           </form>
           <p>
             <small>
-              Already have an account?{" "}
+              Already have an account?
               <Link className="text-primary" to="/login">
+                {" "}
                 Please login
               </Link>
             </small>
