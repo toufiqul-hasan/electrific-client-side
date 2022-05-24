@@ -20,6 +20,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import ManageOrder from "./Pages/Dashboard/ManageOrder";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import AddProduct from "./Pages/Dashboard/AddProduct";
+import Purchase from "./Pages/Purchase/Purchase";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,14 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/purchase"
+          element={
+            <RequireAuth>
+              <Purchase />
+            </RequireAuth>
+          }
+        />
         <Route
           path="/dashboard"
           element={

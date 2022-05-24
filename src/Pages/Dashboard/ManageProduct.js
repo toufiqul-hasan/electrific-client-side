@@ -16,7 +16,7 @@ const ManageProduct = () => {
           <div className="text-center text-2xl font-bold">
             <h1>Manage Product</h1>
           </div>
-          <div className="grid grid-cols-1 gap-5 mt-10 lg:grid-cols-3 mb-10">
+          <div className="grid grid-cols-1 gap-5 mt-10 mb-5 lg:grid-cols-3">
             {products.map((product) => (
               <ManageProducts
                 key={product._id}

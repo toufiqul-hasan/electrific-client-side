@@ -3,8 +3,8 @@ import "./Home.css";
 import Banner from "./Banner";
 import BusinessSummary from "./BusinessSummary";
 import Quote from "./Quote";
-import WhyChooseUs from "./WhyChooseUs";
-import AboutCompany from "./AboutCompany";
+import WhatWeOffer from "./WhatWeOffer";
+import SomethingAboutUs from "./SomethingAboutUs";
 import UserReviews from "./UserReviews";
 import FeaturedTools from "./FeaturedTools";
 
@@ -18,13 +18,13 @@ const Home = () => {
         <FeaturedTools/>
       </div>
       <div>
+        <WhatWeOffer />
+      </div>
+      <div>
+        <SomethingAboutUs />
+      </div>
+      <div>
         <BusinessSummary />
-      </div>
-      <div>
-        <WhyChooseUs />
-      </div>
-      <div>
-        <AboutCompany />
       </div>
       <div>
         <UserReviews />

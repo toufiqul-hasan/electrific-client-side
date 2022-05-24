@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import chart from "../../Assets/Images/chart.png";
 
-const AboutCompany = () => {
+const SomethingAboutUs = () => {
   return (
     <div className="mt-20 p-5 bg-base-200 section-title">
       <h1 className="text-3xl font-bold text-center mt-10">Something About Us</h1>
@@ -37,4 +37,4 @@ const AboutCompany = () => {
   );
 };
 
-export default AboutCompany;
+export default SomethingAboutUs;

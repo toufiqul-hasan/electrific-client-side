@@ -1,6 +1,6 @@
 import React from "react";
 
-const WhyChooseUs = () => {
+const WhatWeOffer = () => {
   return (
     <div className="section-title">
       <h1 className="text-3xl font-bold text-center mt-20">What We Offer</h1>
@@ -62,4 +62,4 @@ const WhyChooseUs = () => {
   );
 };
 
-export default WhyChooseUs;
+export default WhatWeOffer;
