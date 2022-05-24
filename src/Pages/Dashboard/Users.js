@@ -9,7 +9,7 @@ const Users = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("http://localhost:5000/user", {
+    fetch("https://stormy-taiga-16041.herokuapp.com/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -21,14 +21,13 @@ const Users = () => {
   }
   return (
     <div>
-      <h2 className="text-2xl">All Users: {users.length}</h2>
+      <h2 className="text-2xl">Total Users: {users.length}</h2>
       <div class="overflow-x-auto">
-        <table class="table w-full">
+        <table class="table table-zebra w-full">
           <thead>
             <tr>
               <th>Email</th>
-              <th>Role</th>
-              <th>Delete</th>
+              <th>Make Admin</th>
             </tr>
           </thead>
           <tbody>

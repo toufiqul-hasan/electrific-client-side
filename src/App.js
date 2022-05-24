@@ -17,6 +17,9 @@ import Reviews from "./Pages/Dashboard/Reviews";
 import Orders from "./Pages/Dashboard/Orders";
 import Users from "./Pages/Dashboard/Users";
 import { QueryClient, QueryClientProvider } from "react-query";
+import ManageOrder from "./Pages/Dashboard/ManageOrder";
+import ManageProduct from "./Pages/Dashboard/ManageProduct";
+import AddProduct from "./Pages/Dashboard/AddProduct";
 
 const queryClient = new QueryClient();
 
@@ -25,12 +28,12 @@ function App() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/home" element={<Home />}></Route>
-        <Route path="/blog" element={<Blog />}></Route>
-        <Route path="/portfolio" element={<Portfolio />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route
           path="/dashboard"
           element={
@@ -39,17 +42,20 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<Profile />}></Route>
-          <Route path="orders" element={<Orders />}></Route>
-          <Route path="reviews" element={<Reviews />}></Route>
+          <Route index element={<Profile />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="manageOrder" element={<ManageOrder />} />
+          <Route path="manageProduct" element={<ManageProduct />} />
+          <Route path="addProduct" element={<AddProduct />} />
           <Route
-            path="users"
+            path="makeAdmin"
             element={
               <QueryClientProvider client={queryClient}>
                 <Users />
               </QueryClientProvider>
             }
-          ></Route>
+          />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
