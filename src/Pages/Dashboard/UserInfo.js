@@ -7,7 +7,7 @@ const UserInfo = ({ userInfo, reload, setReload }) => {
   const handleUpdateInfo = () => {
     const proceed = window.confirm("Do you really want to update?");
     if (proceed) {
-      const url = `http://localhost:5000/user-info/${_id}`;
+      const url = `https://stormy-taiga-16041.herokuapp.com/user-info/${_id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -25,7 +25,7 @@ const Profile = () => {
 
     const info = { email, name, education, location, phone, social };
 
-    fetch("http://localhost:5000/user-info", {
+    fetch("https://stormy-taiga-16041.herokuapp.com/user-info", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -43,7 +43,7 @@ const Profile = () => {
   useEffect(() => {
     const getUserInfo = async () => {
       const email = user.email;
-      const url = `http://localhost:5000/user-info?email=${email}`;
+      const url = `https://stormy-taiga-16041.herokuapp.com/user-info?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setUserInfo(data);
