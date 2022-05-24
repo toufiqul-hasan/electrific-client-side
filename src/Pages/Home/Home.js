@@ -6,12 +6,16 @@ import Quote from "./Quote";
 import WhyChooseUs from "./WhyChooseUs";
 import AboutCompany from "./AboutCompany";
 import UserReviews from "./UserReviews";
+import FeaturedTools from "./FeaturedTools";
 
 const Home = () => {
   return (
     <div className="mt-16">
       <div>
         <Banner />
+      </div>
+      <div>
+        <FeaturedTools/>
       </div>
       <div>
         <BusinessSummary />
