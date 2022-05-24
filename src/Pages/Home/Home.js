@@ -5,6 +5,7 @@ import BusinessSummary from "./BusinessSummary";
 import Quote from "./Quote";
 import WhyChooseUs from "./WhyChooseUs";
 import AboutCompany from "./AboutCompany";
+import UserReviews from "./UserReviews";
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
       <div>
         <Banner />
       </div>
-      <div className="mt-10">
+      <div>
         <BusinessSummary />
       </div>
       <div>
@@ -20,6 +21,9 @@ const Home = () => {
       </div>
       <div>
         <AboutCompany />
+      </div>
+      <div>
+        <UserReviews />
       </div>
       <div>
         <Quote />

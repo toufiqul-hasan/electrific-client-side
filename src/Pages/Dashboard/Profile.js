@@ -12,7 +12,6 @@ const Profile = () => {
   const [userInfo, setUserInfo] = useState([]);
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
-  console.log(userInfo.length);
 
   const handleAddInfo = (event) => {
     event.preventDefault();

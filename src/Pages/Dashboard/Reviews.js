@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
-import axiosPrivate from "../../api/axiosPrivate";
-import { signOut } from "firebase/auth";
 import Review from "./Review";
 
 const Reviews = () => {
   const [reload, setReload] = useState(true);
   const [reviews, setReviews] = useState([]);
-  // const navigate = useNavigate();
   const [user] = useAuthState(auth);
 
   const handleReview = (event) => {
@@ -22,7 +18,7 @@ const Reviews = () => {
 
     const info = { email, name, description, rating };
 
-    fetch("http://localhost:5000/user-review", {
+    fetch("https://stormy-taiga-16041.herokuapp.com/user-review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -31,25 +27,24 @@ const Reviews = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         toast.success("Reviews has been added successfully!");
         setReload(!reload);
         event.target.reset();
       });
   };
 
-  useEffect( () =>{
+  useEffect(() => {
     const email = user.email;
-    const url = `http://localhost:5000/user-review?email=${email}`;
+    const url = `https://stormy-taiga-16041.herokuapp.com/user-review?email=${email}`;
     fetch(url)
-    .then(res => res.json())
-    .then(data => setReviews(data));
-}, [reload, user.email]);
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, [reload, user.email]);
 
   return (
     <>
-    <div>
-      <h1 className="text-center text-lg font-bold mt-5">My Reviews</h1>
+      <div>
+        <h1 className="text-center text-lg font-bold mt-5">My Reviews</h1>
         <div className="card">
           <div className="card-body grid grid-cols-1 lg:grid-cols-3 gap-5">
             {reviews.map((review) => (
