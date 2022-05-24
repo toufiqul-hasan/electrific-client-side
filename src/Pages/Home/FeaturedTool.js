@@ -13,9 +13,9 @@ const FeaturedTool = ({ product, reload, setReload }) => {
   } = product;
 
   return (
-    <div className="card shadow-xl">
+    <div className="card shadow-lg">
       <figure>
-        <img className="rounded-lg" src={image} alt="" />
+        <img className="rounded-lg w-full" src={image} alt="" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>

@@ -1,5 +1,7 @@
 import React from "react";
 import { toast } from "react-toastify";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
 const ManageProducts = ({ product, reload, setReload }) => {
   const {
@@ -12,25 +14,37 @@ const ManageProducts = ({ product, reload, setReload }) => {
     image,
   } = product;
 
+  const submit = () => {
+    confirmAlert({
+      title: "Do you really want to delete?",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => handleProductDelete(),
+        },
+        {
+          label: "No",
+        },
+      ],
+    });
+  };
+
   const handleProductDelete = () => {
-    const proceed = window.confirm("Do you really want to delete?");
-    if (proceed) {
-      const url = `https://stormy-taiga-16041.herokuapp.com/product/${_id}`;
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setReload(!reload);
-        });
-      toast("Product has been deleted successfully !");
-    }
+    const url = `https://stormy-taiga-16041.herokuapp.com/product/${_id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setReload(!reload);
+      });
+    toast("Product has been deleted successfully !");
   };
 
   return (
-    <div className="card shadow-xl">
+    <div className="card shadow-lg">
       <figure>
-        <img className="rounded-lg" src={image} alt="" />
+        <img className="rounded-lg w-full" src={image} alt="" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
@@ -41,7 +55,7 @@ const ManageProducts = ({ product, reload, setReload }) => {
         <div className="card-actions">
           <button
             className="btn btn-primary text-white"
-            onClick={() => handleProductDelete()}
+            onClick={() => submit()}
           >
             Delete
           </button>
