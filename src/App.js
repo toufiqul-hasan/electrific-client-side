@@ -15,6 +15,10 @@ import Dashboard from "./Pages/Dashboard/Dashboard.js";
 import Profile from "./Pages/Dashboard/Profile";
 import Reviews from "./Pages/Dashboard/Reviews";
 import Orders from "./Pages/Dashboard/Orders";
+import Users from "./Pages/Dashboard/Users";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
@@ -38,6 +42,14 @@ function App() {
           <Route index element={<Profile />}></Route>
           <Route path="orders" element={<Orders />}></Route>
           <Route path="reviews" element={<Reviews />}></Route>
+          <Route
+            path="users"
+            element={
+              <QueryClientProvider client={queryClient}>
+                <Users />
+              </QueryClientProvider>
+            }
+          ></Route>
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
