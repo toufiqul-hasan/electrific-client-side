@@ -1,6 +1,4 @@
 import React from "react";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 
 const ManageProducts = ({ product, reload, setReload }) => {
   const {
