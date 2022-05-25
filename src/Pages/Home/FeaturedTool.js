@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedTool = ({ product, reload, setReload }) => {
   const {
@@ -11,6 +11,12 @@ const FeaturedTool = ({ product, reload, setReload }) => {
     price,
     image,
   } = product;
+
+  const navigate = useNavigate();
+
+  const navigateToToolDetail = (id) => {
+    navigate(`/purchase/${id}`);
+  };
 
   return (
     <div className="card shadow-lg">
@@ -24,9 +30,12 @@ const FeaturedTool = ({ product, reload, setReload }) => {
         <p>Minimum Order Quantity: {orderQuantity}</p>
         <p>Available Quantity: {availableQuantity}</p>
         <div className="card-actions">
-          <Link to="/purchase">
-            <button className="btn btn-primary text-white">Buy Now</button>
-          </Link>
+          <button
+            className="btn btn-primary text-white"
+            onClick={() => navigateToToolDetail(_id)}
+          >
+            Buy Now
+          </button>
         </div>
       </div>
     </div>
