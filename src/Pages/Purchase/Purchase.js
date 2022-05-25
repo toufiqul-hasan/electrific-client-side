@@ -46,7 +46,7 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => {
         toast.success("Product has been ordered successfully!");
-        toast("Go to dashboard to make payment.")
+        toast("Go to dashboard to make payment.");
         event.target.reset();
       });
   };
@@ -71,8 +71,8 @@ const Purchase = () => {
         <div className="text-center">
           <h1 className="text-2xl font-bold uppercase">Customer Information</h1>
           <div className="mt-2">
-          <h1>Name: {user.displayName}</h1>
-          <h1>Email: {user.email}</h1>
+            <h1>Name: {user.displayName}</h1>
+            <h1>Email: {user.email}</h1>
           </div>
         </div>
       </div>
