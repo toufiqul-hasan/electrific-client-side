@@ -54,7 +54,14 @@ function App() {
           <Route index element={<Profile />} />
           <Route path="orders" element={<Orders />} />
           <Route path="reviews" element={<Reviews />} />
-          <Route path="manageOrder" element={<ManageOrder />} />
+          <Route
+            path="manageOrder"
+            element={
+              <QueryClientProvider client={queryClient}>
+                <ManageOrder />
+              </QueryClientProvider>
+            }
+          />
           <Route path="manageProduct" element={<ManageProduct />} />
           <Route path="addProduct" element={<AddProduct />} />
           <Route

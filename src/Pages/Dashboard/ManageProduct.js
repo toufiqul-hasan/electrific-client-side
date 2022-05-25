@@ -12,10 +12,13 @@ const ManageProduct = () => {
           <Loading />
         </div>
       ) : (
-        <div className="mt-5">
-          <div className="text-center text-2xl font-bold">
-            <h1>Manage Product</h1>
+        <div>
+          <div className="text-2xl font-bold">
+            <h1 className="text-center uppercase">Manage Product</h1>
           </div>
+          <h2 className="text-center font-bold mb-4">
+            Total Products: {products.length}
+          </h2>
           <div className="grid grid-cols-1 mt-10 mb-5 lg:grid-cols-3 gap-10">
             {products.map((product) => (
               <ManageProducts

@@ -15,7 +15,7 @@ const Orders = () => {
   useEffect(() => {
     const getOrderInfo = async () => {
       const email = user.email;
-      const url = `http://localhost:5000/order?email=${email}`;
+      const url = `https://stormy-taiga-16041.herokuapp.com/order?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setOrderInfo(data);
@@ -30,7 +30,12 @@ const Orders = () => {
   }, [user, navigate, reload]);
   return (
     <div>
-      <h1>Orders: {orderInfo.length} </h1>
+      <div className="text-2xl font-bold">
+        <h1 className="text-center uppercase">My Orders</h1>
+      </div>
+      <h2 className="text-center font-bold mb-4">
+        Total Orders: {orderInfo.length}
+      </h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

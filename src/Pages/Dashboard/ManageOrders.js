@@ -2,8 +2,8 @@ import React from "react";
 import { toast } from "react-toastify";
 import { confirmAlert } from "react-confirm-alert";
 
-const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
-  const { _id, tools, orderQuantity } = orderInfo;
+const ManageOrders = ({ order, refetch, index }) => {
+  const { _id, name, tools, orderQuantity } = order;
 
   const submit = () => {
     confirmAlert({
@@ -27,13 +27,15 @@ const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setReload(!reload);
+        refetch();
       });
     toast.error("Order cancelled!");
   };
+
   return (
     <tr>
       <th>{index + 1}</th>
+      <td>{name}</td>
       <td>{tools}</td>
       <td>{orderQuantity}</td>
       <td>
@@ -41,7 +43,7 @@ const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
           // onClick={() => handleCancelOrder()}
           className="btn btn-xs btn-success text-white"
         >
-          Pay
+          Pending
         </label>
       </td>
       <td>
@@ -56,4 +58,4 @@ const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
   );
 };
 
-export default OrderInfo;
+export default ManageOrders;

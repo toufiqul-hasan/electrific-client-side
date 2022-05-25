@@ -10,7 +10,7 @@ const Purchase = () => {
   const [tool, setTool] = useState({});
 
   useEffect(() => {
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://stormy-taiga-16041.herokuapp.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -20,7 +20,7 @@ const Purchase = () => {
 
   const handleBuyProduct = (event) => {
     event.preventDefault();
-    const email = user?.email;
+    const email = user.email;
     const name = user.displayName;
     const tools = tool.name;
     const address = event.target.address.value;
@@ -36,7 +36,7 @@ const Purchase = () => {
       orderQuantity,
     };
 
-    fetch("http://localhost:5000/order", {
+    fetch("https://stormy-taiga-16041.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -45,7 +45,8 @@ const Purchase = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast("Product has been added successfully!");
+        toast.success("Product has been ordered successfully!");
+        toast("Go to dashboard to make payment.")
         event.target.reset();
       });
   };
@@ -66,9 +67,18 @@ const Purchase = () => {
           </div>
         </div>
       </div>
+      <div>
+        <div className="text-center">
+          <h1 className="text-2xl font-bold uppercase">Customer Information</h1>
+          <div className="mt-2">
+          <h1>Name: {user.displayName}</h1>
+          <h1>Email: {user.email}</h1>
+          </div>
+        </div>
+      </div>
       <div className="text-center mt-5">
         <div className="text-2xl font-bold">
-          <h1>Buy Product</h1>
+          <h1 className="uppercase">Buy Product</h1>
         </div>
         <div className="form-control mt-5">
           <form onSubmit={handleBuyProduct}>

@@ -44,7 +44,12 @@ const Reviews = () => {
   return (
     <>
       <div>
-        <h1 className="text-center text-lg font-bold mt-5">My Reviews</h1>
+        <div className="text-2xl font-bold">
+          <h1 className="text-center uppercase">My Reviews</h1>
+        </div>
+        <h2 className="text-center font-bold mb-4">
+          Total Reviews: {reviews.length}
+        </h2>
         <div className="card">
           <div className="card-body grid grid-cols-1 lg:grid-cols-3 gap-5">
             {reviews.map((review) => (

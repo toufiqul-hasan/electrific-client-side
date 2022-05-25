@@ -1,9 +1,57 @@
-import React from 'react';
+import React, { useState } from "react";
+import ManageOrders from "./ManageOrders";
+import { useQuery } from "react-query";
+import Loading from "../../Shared/Loading";
 
 const ManageOrder = () => {
+  const {
+    data: orders,
+    isLoading,
+    refetch,
+  } = useQuery("orders", () =>
+    fetch("https://stormy-taiga-16041.herokuapp.com/order", {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
+  );
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <div>
-      <h1>MO</h1>
+      <div className="text-2xl font-bold">
+        <h1 className="text-center uppercase">Manage Order</h1>
+      </div>
+      <h1 className="text-center font-bold mb-4">
+        Total Orders: {orders.length}
+      </h1>
+      <div className="overflow-x-auto">
+        <table className="table w-full">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Customer Name</th>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Status</th>
+              <th>Cancel Order</th>
+            </tr>
+          </thead>
+          <tbody>
+            {orders.map((order, index) => (
+              <ManageOrders
+                key={order._id}
+                index={index}
+                order={order}
+                refetch={refetch}
+              ></ManageOrders>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

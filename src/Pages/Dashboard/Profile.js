@@ -57,6 +57,9 @@ const Profile = () => {
   }, [user, navigate, reload]);
   return (
     <>
+      <div className="text-2xl font-bold">
+        <h1 className="text-center uppercase">Profile</h1>
+      </div>
       <div className="flex justify-center">
         <div className="card">
           <div className="card-body">
@@ -75,7 +78,7 @@ const Profile = () => {
       </div>
       <div className="text-center">
         <div className="text-2xl font-bold">
-          <h1>Add Info</h1>
+          <h1 className="text-center uppercase">Update Profile</h1>
         </div>
         <div className="mt-5">
           <form onSubmit={handleAddInfo}>
