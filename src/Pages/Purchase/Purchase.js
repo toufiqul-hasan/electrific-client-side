@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
 
 const Purchase = () => {
   const [user] = useAuthState(auth);
@@ -18,36 +19,23 @@ const Purchase = () => {
       });
   }, [id]);
 
-  const handleBuyProduct = (event) => {
-    event.preventDefault();
-    const email = user.email;
-    const name = user.displayName;
-    const tools = tool.name;
-    const address = event.target.address.value;
-    const orderQuantity = event.target.orderQuantity.value;
-    const phone = event.target.phone.value;
-
-    const info = {
-      email,
-      name,
-      tools,
-      address,
-      phone,
-      orderQuantity,
-    };
-
-    fetch("https://stormy-taiga-16041.herokuapp.com/order", {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    fetch("http://localhost:5000/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(info),
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((data) => {
         toast.success("Product has been ordered successfully!");
         toast("Go to dashboard to make payment.");
-        event.target.reset();
       });
   };
 
@@ -81,35 +69,87 @@ const Purchase = () => {
           <h1 className="uppercase">Buy Product</h1>
         </div>
         <div className="form-control mt-5">
-          <form onSubmit={handleBuyProduct}>
-            <textarea
-              name="address"
-              type="text"
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              className="input input-bordered w-full max-w-xs"
+              placeholder="Name"
+              type="hidden"
+              value={user.displayName}
+              readOnly
+              {...register("name")}
+            />
+            <input
+              className="input input-bordered w-full max-w-xs"
+              placeholder="Email"
+              type="hidden"
+              value={user.email}
+              readOnly
+              {...register("email")}
+            />
+            <input
+              className="input input-bordered w-full max-w-xs"
+              placeholder="Tools Name"
+              {...register("tools")}
+            />
+            <br />
+            <br />
+            <input
+              className="input input-bordered w-full max-w-xs"
               placeholder="Address"
-              className="input input-bordered w-full max-w-xs"
+              {...register("address")}
             />
             <br />
             <br />
             <input
-              name="phone"
-              type="text"
+              className="input input-bordered w-full max-w-xs"
               placeholder="Contact Number"
-              className="input input-bordered w-full max-w-xs"
+              {...register("phone")}
             />
             <br />
             <br />
-            <label className="label">
-              <span className="w-full">Order Quantity</span>
-            </label>
             <input
-              name="orderQuantity"
-              type="number"
-              placeholder={tool.orderQuantity}
               className="input input-bordered w-full max-w-xs"
-            />
+              placeholder="Order Quantity"
+              type="number"
+              {...register("orderQuantity", {
+                validate: {
+                  minimumOrderQuantity: (value) =>
+                    parseFloat(value) >= tool.orderQuantity,
+                  availableQuantity: (value) =>
+                    parseFloat(value) <= tool.availableQuantity,
+                },
+              })}
+            />{" "}
+            <br /> <br />
+            {errors.orderQuantity &&
+              errors.orderQuantity.type === "minimumOrderQuantity" && (
+                <p className="text-red-600">
+                  You can't order less than {tool.orderQuantity} pcs
+                </p>
+              )}
+            {errors.orderQuantity &&
+              errors.orderQuantity.type === "availableQuantity" && (
+                <p className="text-red-600">
+                  You can not order more than {tool.availableQuantity}{" "}
+                </p>
+              )}{" "}
             <br />
             <br />
-            <button className="btn btn-primary text-white">Submit</button>
+            {(errors.orderQuantity && errors.orderQuantity.type) ||
+            (errors.orderQuantity && errors.orderQuantity.type) ? (
+              <input
+                className="btn text-white"
+                disabled="disabled"
+                type="submit"
+                value="Submit"
+              />
+            ) : (
+              <input
+                className="btn btn-primary text-white"
+                type="submit"
+                value="Submit"
+              />
+            )}
           </form>
           <br />
           <br />
