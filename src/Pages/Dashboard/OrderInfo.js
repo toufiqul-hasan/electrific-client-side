@@ -1,6 +1,7 @@
 import React from "react";
 import { toast } from "react-toastify";
 import { confirmAlert } from "react-confirm-alert";
+import { Link } from "react-router-dom";
 
 const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
   const { _id, tools, price, orderQuantity } = orderInfo;
@@ -38,19 +39,32 @@ const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
       <td className="text-center">{price}</td>
       <td className="text-center">{orderQuantity}</td>
       <td className="text-center">
-        <label
-          className="btn btn-xs btn-success text-white"
-        >
-          Pay
-        </label>
+        {orderInfo.price && !orderInfo.paid && (
+          <Link to={`/dashboard/payment/${orderInfo._id}`}>
+            <button className="btn btn-xs btn-success">pay</button>
+          </Link>
+        )}
+        {orderInfo.price && orderInfo.paid && (
+          <div>
+            <p>
+              <span className="text-success">Paid</span>
+            </p>
+            <p>
+              Transaction id:{" "}
+              <span className="text-success">{orderInfo.transactionId}</span>
+            </p>
+          </div>
+        )}
       </td>
       <td className="text-center">
-        <label
-          onClick={() => submit()}
-          className="btn btn-xs btn-error text-white"
-        >
-          Cancel
-        </label>
+        {!orderInfo.paid && (
+          <label
+            onClick={() => submit()}
+            className="btn btn-xs btn-error text-white"
+          >
+            Cancel
+          </label>
+        )}
       </td>
     </tr>
   );

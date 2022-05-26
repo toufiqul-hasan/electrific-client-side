@@ -30,13 +30,14 @@ const ManageOrder = () => {
       </h1>
       <div className="overflow-x-auto">
         <table className="table w-full">
-          <thead>
+          <thead className="text-center">
             <tr>
               <th>No.</th>
               <th>Customer Name</th>
               <th>Product Name</th>
               <th>Quantity</th>
-              <th>Status</th>
+              <th>Order Status</th>
+              <th>Payment Status</th>
               <th>Cancel Order</th>
             </tr>
           </thead>

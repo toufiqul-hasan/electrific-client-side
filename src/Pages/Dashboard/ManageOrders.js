@@ -32,27 +32,46 @@ const ManageOrders = ({ order, refetch, index }) => {
     toast.error("Order cancelled!");
   };
 
+  const handleOrderStatus = () => {
+    const url = `http://localhost:5000/order/${_id}`;
+    fetch(url, {
+      method: "PUT",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        refetch();
+      });
+  };
+
   return (
-    <tr>
+    <tr className="text-center">
       <th>{index + 1}</th>
       <td>{name}</td>
       <td>{tools}</td>
       <td>{orderQuantity}</td>
       <td>
-        <label
-          // onClick={() => handleCancelOrder()}
-          className="btn btn-xs btn-success text-white"
-        >
-          Pending
-        </label>
+        {(order.paid === true && order.status === true) ? (
+              <label className="btn btn-xs btn-success text-white">Shipped</label>
+            ) : (
+              <label className="btn btn-xs btn-success text-white"
+          onClick={() => handleOrderStatus()}>Pending</label>
+            )}
       </td>
+      <td>{(order.paid === true) ? (
+              <label className="btn btn-xs btn-success text-white">Paid</label>
+            ) : (
+              <label className="btn btn-xs btn-error text-white">Unpaid</label>
+            )}
+        </td>
       <td>
-        <label
-          onClick={() => submit()}
-          className="btn btn-xs btn-error text-white"
-        >
-          Cancel
-        </label>
+        {!order.paid && (
+          <label
+            onClick={() => submit()}
+            className="btn btn-xs btn-error text-white"
+          >
+            Cancel
+          </label>
+        )}
       </td>
     </tr>
   );

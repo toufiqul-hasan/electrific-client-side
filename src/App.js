@@ -20,6 +20,7 @@ import ManageOrder from "./Pages/Dashboard/ManageOrder";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import AddProduct from "./Pages/Dashboard/AddProduct";
 import Purchase from "./Pages/Purchase/Purchase";
+import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
           <Route path="manageProduct" element={<ManageProduct />} />
           <Route path="addProduct" element={<AddProduct />} />
           <Route path="makeAdmin" element={<Users />} />
+          <Route path="payment/:id" element={<Payment />}></Route>
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
