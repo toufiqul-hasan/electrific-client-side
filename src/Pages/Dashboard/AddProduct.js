@@ -13,7 +13,7 @@ const AddProduct = () => {
     const description = event.target.description.value;
     const orderQuantity = parseInt(event.target.orderQuantity.value);
     const availableQuantity = parseInt(event.target.availableQuantity.value);
-    const price = event.target.price.value;
+    const price = parseInt(event.target.price.value);
     const image = event.target.image.value;
 
     const info = {
@@ -52,38 +52,43 @@ const AddProduct = () => {
             type="text"
             placeholder="Product Name"
             className="input input-bordered w-full max-w-xs"
+            required
           />
           <br />
           <br />
-          <input
+          <textarea
             name="description"
             type="text"
             placeholder="Description"
             className="input input-bordered w-full max-w-xs"
+            required
           />
           <br />
           <br />
           <input
             name="orderQuantity"
-            type="text"
+            type="number"
             placeholder="Minimum Order Quantity"
             className="input input-bordered w-full max-w-xs"
+            required
           />
           <br />
           <br />
           <input
             name="availableQuantity"
-            type="text"
+            type="number"
             placeholder="Available Quantity"
             className="input input-bordered w-full max-w-xs"
+            required
           />
           <br />
           <br />
           <input
             name="price"
-            type="text"
+            type="number"
             placeholder="Price (Per Unit Price)"
             className="input input-bordered w-full max-w-xs"
+            required
           />
           <br />
           <br />
@@ -92,6 +97,7 @@ const AddProduct = () => {
             type="text"
             placeholder="Image URL"
             className="input input-bordered w-full max-w-xs"
+            required
           />
           <br />
           <br />

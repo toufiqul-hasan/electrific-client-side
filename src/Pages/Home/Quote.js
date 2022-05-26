@@ -21,21 +21,25 @@ const Quote = () => {
             type="text"
             placeholder="Tools Name"
             className="input input-bordered input-primary w-full max-w-xs"
+            required
           />
           <input
-            type="text"
+            type="number"
             placeholder="Quantity"
             className="input input-bordered input-primary w-full max-w-xs"
+            required
           />
           <input
             type="text"
             placeholder="Your Name"
             className="input input-bordered input-primary w-full max-w-xs"
+            required
           />
           <input
             type="email"
             placeholder="Your Email"
             className="input input-bordered input-primary w-full max-w-xs"
+            required
           />
           <div>
             <button className="btn btn-primary text-white" onClick={notify}>

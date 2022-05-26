@@ -100,7 +100,7 @@ const Profile = () => {
             <br />
             <input
               name="phone"
-              type="text"
+              type="number"
               placeholder="Mobile Number"
               className="input input-bordered w-full max-w-xs"
             />

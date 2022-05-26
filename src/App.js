@@ -16,13 +16,10 @@ import Profile from "./Pages/Dashboard/Profile";
 import Reviews from "./Pages/Dashboard/Reviews";
 import Orders from "./Pages/Dashboard/Orders";
 import Users from "./Pages/Dashboard/Users";
-import { QueryClient, QueryClientProvider } from "react-query";
 import ManageOrder from "./Pages/Dashboard/ManageOrder";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import AddProduct from "./Pages/Dashboard/AddProduct";
 import Purchase from "./Pages/Purchase/Purchase";
-
-const queryClient = new QueryClient();
 
 function App() {
   return (
@@ -54,24 +51,10 @@ function App() {
           <Route index element={<Profile />} />
           <Route path="orders" element={<Orders />} />
           <Route path="reviews" element={<Reviews />} />
-          <Route
-            path="manageOrder"
-            element={
-              <QueryClientProvider client={queryClient}>
-                <ManageOrder />
-              </QueryClientProvider>
-            }
-          />
+          <Route path="manageOrder" element={<ManageOrder />} />
           <Route path="manageProduct" element={<ManageProduct />} />
           <Route path="addProduct" element={<AddProduct />} />
-          <Route
-            path="makeAdmin"
-            element={
-              <QueryClientProvider client={queryClient}>
-                <Users />
-              </QueryClientProvider>
-            }
-          />
+          <Route path="makeAdmin" element={<Users />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
