@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { confirmAlert } from "react-confirm-alert";
 
 const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
-  const { _id, tools, orderQuantity } = orderInfo;
+  const { _id, tools, price, orderQuantity } = orderInfo;
 
   const submit = () => {
     confirmAlert({
@@ -35,16 +35,16 @@ const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
     <tr>
       <th>{index + 1}</th>
       <td>{tools}</td>
-      <td>{orderQuantity}</td>
-      <td>
+      <td className="text-center">{price}</td>
+      <td className="text-center">{orderQuantity}</td>
+      <td className="text-center">
         <label
-          // onClick={() => handleCancelOrder()}
           className="btn btn-xs btn-success text-white"
         >
           Pay
         </label>
       </td>
-      <td>
+      <td className="text-center">
         <label
           onClick={() => submit()}
           className="btn btn-xs btn-error text-white"

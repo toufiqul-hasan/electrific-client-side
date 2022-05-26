@@ -22,10 +22,11 @@ const Purchase = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/order", {
+    fetch("https://stormy-taiga-16041.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -34,8 +35,10 @@ const Purchase = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success("Product has been ordered successfully!");
-        toast("Go to dashboard to make payment.");
+        toast.success(
+          "Product has been ordered successfully! Go to dashboard to make payment."
+        );
+        reset();
       });
   };
 
@@ -88,14 +91,38 @@ const Purchase = () => {
             />
             <input
               className="input input-bordered w-full max-w-xs"
-              placeholder="Tools Name"
-              {...register("tools")}
+              placeholder="Product Name"
+              type="text"
+              defaultValue={tool.name}
+              readOnly
+              {...register("tools", {
+                required: {
+                  value: true,
+                  message: "Product Name is Required",
+                },
+              })}
             />
             <br />
             <br />
             <input
               className="input input-bordered w-full max-w-xs"
+              placeholder="Price"
+              type="text"
+              defaultValue={tool.price}
+              readOnly
+              {...register("price", {
+                required: {
+                  value: true,
+                  message: "Price is Required",
+                },
+              })}
+            />
+            <br />
+            <br />
+            <textarea
+              className="input input-bordered w-full max-w-xs"
               placeholder="Address"
+              required
               {...register("address")}
             />
             <br />
@@ -103,6 +130,8 @@ const Purchase = () => {
             <input
               className="input input-bordered w-full max-w-xs"
               placeholder="Contact Number"
+              type="number"
+              required
               {...register("phone")}
             />
             <br />
@@ -110,16 +139,17 @@ const Purchase = () => {
             <input
               className="input input-bordered w-full max-w-xs"
               placeholder="Order Quantity"
+              required
               type="number"
               {...register("orderQuantity", {
                 validate: {
                   minimumOrderQuantity: (value) =>
-                    parseFloat(value) >= tool.orderQuantity,
+                    parseInt(value) >= tool.orderQuantity,
                   availableQuantity: (value) =>
-                    parseFloat(value) <= tool.availableQuantity,
+                    parseInt(value) <= tool.availableQuantity,
                 },
               })}
-            />{" "}
+            />
             <br /> <br />
             {errors.orderQuantity &&
               errors.orderQuantity.type === "minimumOrderQuantity" && (
@@ -130,9 +160,9 @@ const Purchase = () => {
             {errors.orderQuantity &&
               errors.orderQuantity.type === "availableQuantity" && (
                 <p className="text-red-600">
-                  You can not order more than {tool.availableQuantity}{" "}
+                  You can not order more than {tool.availableQuantity}
                 </p>
-              )}{" "}
+              )}
             <br />
             <br />
             {(errors.orderQuantity && errors.orderQuantity.type) ||
@@ -151,6 +181,7 @@ const Purchase = () => {
               />
             )}
           </form>
+
           <br />
           <br />
         </div>

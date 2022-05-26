@@ -42,9 +42,10 @@ const Orders = () => {
             <tr>
               <th>No.</th>
               <th>Product Name</th>
-              <th>Quantity</th>
-              <th>Make Payment</th>
-              <th>Cancel Order</th>
+              <th className="text-center">Product Price</th>
+              <th className="text-center">Quantity</th>
+              <th className="text-center">Make Payment</th>
+              <th className="text-center">Cancel Order</th>
             </tr>
           </thead>
           <tbody>
