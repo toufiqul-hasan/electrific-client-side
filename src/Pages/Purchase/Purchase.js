@@ -44,14 +44,12 @@ const Purchase = () => {
 
   return (
     <>
-      <div className="mt-20">
-        <div className="card">
-          <figure>
-            <img className="rounded-lg" src={tool.image} alt="" />
-          </figure>
-          <div className="card-body text-center">
-            <p>{tool.name}</p>
-            <p>{tool.description}</p>
+      <div className="hero min-h-screen">
+        <div className="hero-content flex-col lg:flex-row">
+          <img className="rounded-lg" src={tool.image} alt="" />
+          <div>
+            <h1 className="text-5xl font-bold">{tool.name}</h1>
+            <p className="py-6">{tool.description}</p>
             <p>Price: ${tool.price}/unit</p>
             <p>Minimum Order Quantity: {tool.orderQuantity}</p>
             <p>Available Quantity: {tool.availableQuantity}</p>
@@ -139,6 +137,7 @@ const Purchase = () => {
             <input
               className="input input-bordered w-full max-w-xs"
               placeholder="Order Quantity"
+              defaultValue={tool.orderQuantity}
               required
               type="number"
               {...register("orderQuantity", {

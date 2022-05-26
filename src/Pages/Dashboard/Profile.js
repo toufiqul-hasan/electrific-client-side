@@ -76,56 +76,54 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <div className="text-center">
-        <div className="text-2xl font-bold">
-          <h1 className="text-center uppercase">Update Profile</h1>
-        </div>
-        <div className="mt-5">
-          <form onSubmit={handleAddInfo}>
-            <input
-              name="education"
-              type="text"
-              placeholder="Education"
-              className="input input-bordered w-full max-w-xs"
-            />
-            <br />
-            <br />
-            <input
-              name="location"
-              type="text"
-              placeholder="Location"
-              className="input input-bordered w-full max-w-xs"
-            />
-            <br />
-            <br />
-            <input
-              name="phone"
-              type="number"
-              placeholder="Mobile Number"
-              className="input input-bordered w-full max-w-xs"
-            />
-            <br />
-            <br />
-            <input
-              name="social"
-              type="text"
-              placeholder="Social Link"
-              className="input input-bordered w-full max-w-xs"
-            />
-            <br />
-            <br />
-            {userInfo.length === 0 ? (
+      {userInfo.length === 0 ? (
+        <div className="text-center">
+          <div className="text-2xl font-bold">
+            <h1 className="text-center uppercase">Update Profile</h1>
+          </div>
+          <div className="mt-5">
+            <form onSubmit={handleAddInfo}>
+              <input
+                name="education"
+                type="text"
+                placeholder="Education"
+                className="input input-bordered w-full max-w-xs"
+              />
+              <br />
+              <br />
+              <input
+                name="location"
+                type="text"
+                placeholder="Location"
+                className="input input-bordered w-full max-w-xs"
+              />
+              <br />
+              <br />
+              <input
+                name="phone"
+                type="number"
+                placeholder="Mobile Number"
+                className="input input-bordered w-full max-w-xs"
+              />
+              <br />
+              <br />
+              <input
+                name="social"
+                type="text"
+                placeholder="Social Link"
+                className="input input-bordered w-full max-w-xs"
+              />
+              <br />
+              <br />
               <button className="btn btn-primary text-white">Submit</button>
-            ) : (
-              <button className="btn" disabled="disabled">
-                Submit
-              </button>
-            )}
-            <br />
-            <br />
-          </form>
+              <br />
+              <br />
+            </form>
+          </div>
         </div>
-      </div>
+      ) : (
+        ""
+      )}
     </>
   );
 };

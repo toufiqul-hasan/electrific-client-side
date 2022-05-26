@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import quote from "../../Assets/Images/quote.png";
 
 const Quote = () => {
+  
   const notify = () => toast.success("We will contact you soon!");
   const handleQuote = (event) => {
     event.preventDefault();

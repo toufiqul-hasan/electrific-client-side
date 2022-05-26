@@ -41,6 +41,7 @@ const AddProduct = () => {
   };
 
   return (
+    
     <div className="text-center">
       <div className="text-2xl font-bold">
         <h1 className="uppercase">Add Product</h1>

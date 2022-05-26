@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 const CheckoutForm = ({ order }) => {
+  
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
@@ -68,7 +69,6 @@ const CheckoutForm = ({ order }) => {
     } else {
       setCardError("");
       setTransactionId(paymentIntent.id);
-      console.log(paymentIntent);
       setSuccess("Congrats! Your payment is completed.");
 
       //store payment on database
@@ -87,7 +87,6 @@ const CheckoutForm = ({ order }) => {
         .then((res) => res.json())
         .then((data) => {
           setProcessing(false);
-          console.log(data);
         });
     }
   };
@@ -111,7 +110,7 @@ const CheckoutForm = ({ order }) => {
           }}
         />
         <button
-          className="btn btn-success btn-sm mt-4"
+          className="btn btn-success btn-sm mt-4 text-white"
           type="submit"
           disabled={!stripe || !clientSecret || success}
         >

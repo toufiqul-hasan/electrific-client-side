@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { confirmAlert } from "react-confirm-alert";
 
 const UserInfo = ({ userInfo, reload, setReload }) => {
+  
   const { _id, education, location, phone, social } = userInfo;
 
   const submit = () => {
@@ -41,7 +42,7 @@ const UserInfo = ({ userInfo, reload, setReload }) => {
       <p>Social Link: {social}</p>
       <div className="flex justify-center mt-5">
         <button className="btn btn-primary text-white" onClick={() => submit()}>
-          Update Info
+          Update Profile
         </button>
       </div>
     </div>

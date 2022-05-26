@@ -1,6 +1,7 @@
 import React from "react";
 
 const WhatWeOffer = () => {
+  
   return (
     <div className="section-title">
       <h1 className="text-3xl font-bold text-center mt-20">What We Offer</h1>

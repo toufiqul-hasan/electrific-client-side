@@ -3,9 +3,10 @@ import { toast } from "react-toastify";
 import { confirmAlert } from "react-confirm-alert";
 
 const ManageOrders = ({ order, refetch, index }) => {
-  const { _id, name, tools, orderQuantity } = order;
+  const { _id, name, tools, orderQuantity, address, phone} = order;
 
   const submit = () => {
+    
     confirmAlert({
       title: "Do you really want to cancel the order?",
       buttons: [
@@ -47,6 +48,8 @@ const ManageOrders = ({ order, refetch, index }) => {
     <tr className="text-center">
       <th>{index + 1}</th>
       <td>{name}</td>
+      <td>{address}</td>
+      <td>{phone}</td>
       <td>{tools}</td>
       <td>{orderQuantity}</td>
       <td>
@@ -54,7 +57,7 @@ const ManageOrders = ({ order, refetch, index }) => {
           <label className="btn btn-xs btn-success text-white">Shipped</label>
         ) : (
           <label
-            className="btn btn-xs btn-success text-white"
+            className="btn btn-xs btn-info text-white"
             onClick={() => handleOrderStatus()}
           >
             Pending

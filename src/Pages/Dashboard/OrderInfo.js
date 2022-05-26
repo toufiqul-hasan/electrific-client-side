@@ -41,7 +41,7 @@ const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
       <td className="text-center">
         {orderInfo.price && !orderInfo.paid && (
           <Link to={`/dashboard/payment/${orderInfo._id}`}>
-            <button className="btn btn-xs btn-success">pay</button>
+            <button className="btn btn-xs btn-success text-white">Pay</button>
           </Link>
         )}
         {orderInfo.price && orderInfo.paid && (
@@ -50,7 +50,7 @@ const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
               <span className="text-success">Paid</span>
             </p>
             <p>
-              Transaction id:{" "}
+              Transaction Id:{" "}
               <span className="text-success">{orderInfo.transactionId}</span>
             </p>
           </div>

@@ -5,6 +5,7 @@ import auth from "../../firebase.init";
 import Review from "./Review";
 
 const Reviews = () => {
+  
   const [reload, setReload] = useState(true);
   const [reviews, setReviews] = useState([]);
   const [user] = useAuthState(auth);
@@ -15,7 +16,6 @@ const Reviews = () => {
     const name = user.displayName;
     const description = event.target.description.value;
     const rating = event.target.rating.value;
-
     const info = { email, name, description, rating };
 
     fetch("https://stormy-taiga-16041.herokuapp.com/user-review", {

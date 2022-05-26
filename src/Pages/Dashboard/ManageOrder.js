@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ManageOrders from "./ManageOrders";
 import { useQuery } from "react-query";
 import Loading from "../../Shared/Loading";
@@ -34,6 +34,8 @@ const ManageOrder = () => {
             <tr>
               <th>No.</th>
               <th>Customer Name</th>
+              <th>Location</th>
+              <th>Mobile Number</th>
               <th>Product Name</th>
               <th>Quantity</th>
               <th>Order Status</th>

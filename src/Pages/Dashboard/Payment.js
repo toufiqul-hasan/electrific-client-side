@@ -5,8 +5,8 @@ import auth from "../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import Loading from "../../Shared/Loading";
 import CheckoutForm from "./CheckoutForm";
+import Loading from "../../Shared/Loading";
 
 const stripePromise = loadStripe(
   "pk_test_51L3cHJHyVhYAs7qjkCVPJ5dmgK4jQ5cf6wpfN331Sq8J54rnemELtMoUbSqx4lhs43tfm0gQ8xgM1deoWjLEDIov007zDciX1J"

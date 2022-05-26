@@ -1,6 +1,7 @@
 import React from "react";
 
 const BusinessSummary = () => {
+  
   return (
     <div className="text-center section-title mt-10">
       <h1 className="text-3xl font-bold">Business Summary</h1>

@@ -61,8 +61,8 @@ const Blog = () => {
         <div className="card-body">
           <h2 className="card-title">
             4.Why you do not set the state directly in React? For example, if
-            you have const [ products, setProducts ] = useState( [ ] ). Why you do
-            not set products = [ ... ] instead, you use the setProducts?
+            you have const [ products, setProducts ] = useState( [ ] ). Why you
+            do not set products = [ ... ] instead, you use the setProducts?
           </h2>
           <p>
             Answer: We should not set the state directly because these following
@@ -100,8 +100,8 @@ const Blog = () => {
           <p>
             Answer: Unit test: This is a type of testing which is done by
             software developers in which the smallest testable module of an
-            application like interfaces, procedures or functions are tested
-            to calculate if they are suitable to use. <br />
+            application like interfaces, procedures or functions are tested to
+            calculate if they are suitable to use. <br />
             We should write unit tests because it's ensures that all code meets
             quality standards before it's used. This ensures a dependable
             engineering environment where quality is main priority. Over the

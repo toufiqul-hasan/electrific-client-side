@@ -1,6 +1,7 @@
 import React from "react";
 
 const Review = ({ review, reload, setReload }) => {
+  
   const { description, rating } = review;
   return (
     <div className="text-justify">
