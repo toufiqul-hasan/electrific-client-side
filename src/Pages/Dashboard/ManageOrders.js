@@ -33,7 +33,7 @@ const ManageOrders = ({ order, refetch, index }) => {
   };
 
   const handleOrderStatus = () => {
-    const url = `http://localhost:5000/order/${_id}`;
+    const url = `https://stormy-taiga-16041.herokuapp.com/order/${_id}`;
     fetch(url, {
       method: "PUT",
     })
@@ -50,19 +50,24 @@ const ManageOrders = ({ order, refetch, index }) => {
       <td>{tools}</td>
       <td>{orderQuantity}</td>
       <td>
-        {(order.paid === true && order.status === true) ? (
-              <label className="btn btn-xs btn-success text-white">Shipped</label>
-            ) : (
-              <label className="btn btn-xs btn-success text-white"
-          onClick={() => handleOrderStatus()}>Pending</label>
-            )}
+        {order.paid === true && order.status === true ? (
+          <label className="btn btn-xs btn-success text-white">Shipped</label>
+        ) : (
+          <label
+            className="btn btn-xs btn-success text-white"
+            onClick={() => handleOrderStatus()}
+          >
+            Pending
+          </label>
+        )}
       </td>
-      <td>{(order.paid === true) ? (
-              <label className="btn btn-xs btn-success text-white">Paid</label>
-            ) : (
-              <label className="btn btn-xs btn-error text-white">Unpaid</label>
-            )}
-        </td>
+      <td>
+        {order.paid === true ? (
+          <label className="btn btn-xs btn-success text-white">Paid</label>
+        ) : (
+          <label className="btn btn-xs btn-error text-white">Unpaid</label>
+        )}
+      </td>
       <td>
         {!order.paid && (
           <label
