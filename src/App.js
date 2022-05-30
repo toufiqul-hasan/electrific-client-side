@@ -22,6 +22,7 @@ import Purchase from "./Pages/Purchase/Purchase";
 import Payment from "./Pages/Dashboard/Payment";
 import "./App.css";
 import RequireAdmin from "./Pages/Auth/RequireAdmin";
+import Shop from "./Pages/Shop/Shop";
 
 function App() {
   
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/login" element={<Login />} />
