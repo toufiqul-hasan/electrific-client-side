@@ -19,15 +19,30 @@ const ManageProduct = () => {
           <h2 className="text-center font-bold mb-4">
             Total Products: {products.length}
           </h2>
-          <div className="grid grid-cols-1 mt-10 mb-5 lg:grid-cols-3 gap-10">
-            {products.map((product) => (
-              <ManageProducts
-                key={product._id}
-                product={product}
-                reload={reload}
-                setReload={setReload}
-              ></ManageProducts>
-            ))}
+          <div className="overflow-x-auto">
+            <table className="table w-full">
+              <thead>
+                <tr>
+                  <th className="text-center">No.</th>
+                  <th>Product Name</th>
+                  <th className="text-center">Price</th>
+                  <th className="text-center">Available Quantity</th>
+                  <th className="text-center">Order Quantity</th>
+                  <th className="text-center">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {products.map((product, index) => (
+                  <ManageProducts
+                    key={product._id}
+                    index={index}
+                    product={product}
+                    reload={reload}
+                    setReload={setReload}
+                  ></ManageProducts>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       )}

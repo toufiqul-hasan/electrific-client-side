@@ -3,17 +3,8 @@ import { toast } from "react-toastify";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-const ManageProducts = ({ product, reload, setReload }) => {
-  const {
-    _id,
-    name,
-    description,
-    orderQuantity,
-    availableQuantity,
-    price,
-    image,
-  } = product;
-
+const ManageProducts = ({ product, index, reload, setReload }) => {
+  const { _id, name, price, orderQuantity, availableQuantity } = product;
   const submit = () => {
     confirmAlert({
       title: "Do you really want to delete?",
@@ -42,26 +33,21 @@ const ManageProducts = ({ product, reload, setReload }) => {
   };
 
   return (
-    <div className="card shadow-lg">
-      <figure>
-        <img className="rounded-lg w-full" src={image} alt="" />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">{name}</h2>
-        <p>{description}</p>
-        <p>Price: ${price}/unit</p>
-        <p>Minimum Order Quantity: {orderQuantity}</p>
-        <p>Available Quantity: {availableQuantity}</p>
-        <div className="card-actions">
-          <button
-            className="btn btn-primary text-white"
-            onClick={() => submit()}
-          >
-            Delete
-          </button>
-        </div>
-      </div>
-    </div>
+    <tr>
+      <th className="text-center">{index + 1}</th>
+      <td>{name}</td>
+      <td className="text-center">{price}</td>
+      <td className="text-center">{availableQuantity}</td>
+      <td className="text-center">{orderQuantity}</td>
+      <td className="text-center">
+        <label
+          className="btn btn-xs btn-error text-white"
+          onClick={() => submit()}
+        >
+          Delete
+        </label>
+      </td>
+    </tr>
   );
 };
 
