@@ -1,6 +1,6 @@
 # Electrific
 
-## Live Link: https://electrific-bd.web.app
+## Live Website: https://electrific-bd.web.app
 
 ## Client Side Code: https://github.com/toufiqul-hasan/royal-auto-client-side
 
@@ -37,7 +37,6 @@
 
 - [Cors](https://www.npmjs.com/package/cors)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
-- [Node.js](https://nodejs.org)
 - [Express.js](https://expressjs.com)
 - [Heroku](https://www.heroku.com)
 - [Json Web Token](https://jwt.io)
