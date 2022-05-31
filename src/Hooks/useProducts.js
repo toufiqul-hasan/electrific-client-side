@@ -7,7 +7,7 @@ const useProducts = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://stormy-taiga-16041.herokuapp.com/product")
+    fetch("https://electrific.herokuapp.com/product")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

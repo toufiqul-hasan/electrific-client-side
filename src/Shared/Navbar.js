@@ -6,7 +6,6 @@ import { signOut } from "firebase/auth";
 import logo from "../Assets/Images/logo.png";
 
 const Navbar = () => {
-
   const [user] = useAuthState(auth);
   const logout = () => {
     signOut(auth);
@@ -26,6 +25,8 @@ const Navbar = () => {
       <li>
         <NavLink to="/portfolio">Portfolio</NavLink>
       </li>
+      <li>{user && <NavLink to="/dashboard">Dashboard</NavLink>}</li>
+      <li>{user && <Link to="/">{user?.displayName}</Link>}</li>
       <li>
         {user ? (
           <Link to="/login" onClick={logout}>
@@ -35,8 +36,6 @@ const Navbar = () => {
           <NavLink to="/login">Login</NavLink>
         )}
       </li>
-      <li>{user && <NavLink to="/dashboard">Dashboard</NavLink>}</li>
-      <li>{user && <Link to="/">{user?.displayName}</Link>}</li>
     </>
   );
   return (

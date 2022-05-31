@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 
 const AddProduct = () => {
   const [user] = useAuthState(auth);
-
   const handleAddProduct = (event) => {
     event.preventDefault();
     const email = user?.email;
@@ -26,7 +25,7 @@ const AddProduct = () => {
       image,
     };
 
-    fetch("https://stormy-taiga-16041.herokuapp.com/product", {
+    fetch("https://electrific.herokuapp.com/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -41,7 +40,6 @@ const AddProduct = () => {
   };
 
   return (
-    
     <div className="text-center">
       <div className="text-2xl font-bold">
         <h1 className="uppercase">Add Product</h1>

@@ -21,7 +21,7 @@ const ManageProducts = ({ product, index, reload, setReload }) => {
   };
 
   const handleProductDelete = () => {
-    const url = `https://stormy-taiga-16041.herokuapp.com/product/${_id}`;
+    const url = `https://electrific.herokuapp.com/product/${_id}`;
     fetch(url, {
       method: "DELETE",
     })

@@ -23,9 +23,9 @@ import Payment from "./Pages/Dashboard/Payment";
 import "./App.css";
 import RequireAdmin from "./Pages/Auth/RequireAdmin";
 import Shop from "./Pages/Shop/Shop";
+import ResetPassword from "./Pages/Auth/ResetPassword";
 
 function App() {
-  
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -37,6 +37,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/purchase/:id" element={<RequireAuth><Purchase /></RequireAuth>} />
         <Route path="/dashboard" element={ <RequireAuth><Dashboard /></RequireAuth>}>
           <Route index element={<Profile />} />

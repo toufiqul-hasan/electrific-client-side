@@ -3,9 +3,7 @@ import { toast } from "react-toastify";
 import { confirmAlert } from "react-confirm-alert";
 
 const UserInfo = ({ userInfo, reload, setReload }) => {
-  
   const { _id, education, location, phone, social } = userInfo;
-
   const submit = () => {
     confirmAlert({
       title: "Do you really want to update your profile?",
@@ -22,7 +20,7 @@ const UserInfo = ({ userInfo, reload, setReload }) => {
   };
 
   const handleUpdateInfo = () => {
-    const url = `https://stormy-taiga-16041.herokuapp.com/user-info/${_id}`;
+    const url = `https://electrific.herokuapp.com/user-info/${_id}`;
     fetch(url, {
       method: "DELETE",
     })

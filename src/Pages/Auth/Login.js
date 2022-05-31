@@ -10,6 +10,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import useToken from "../../Hooks/useToken";
 
 const Login = () => {
+  
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
 
@@ -23,7 +24,7 @@ const Login = () => {
 
   const [token] = useToken(user || googleUser);
 
-  let signInError;
+  let logInError;
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
@@ -39,7 +40,7 @@ const Login = () => {
   }
 
   if (error || googleError) {
-    signInError = (
+    logInError = (
       <p className="text-red-500">
         <small>{error?.message || googleError?.message}</small>
       </p>
@@ -121,7 +122,7 @@ const Login = () => {
               </label>
             </div>
 
-            {signInError}
+            {logInError}
             <input
               className="btn w-full max-w-xs text-white"
               type="submit"
@@ -130,9 +131,16 @@ const Login = () => {
           </form>
           <p>
             <small>
-              New to Electrific?{" "}
+              Forgot your password?{" "}
+              <Link className="text-primary" to="/resetPassword">
+                Reset Password
+              </Link>
+            </small>{" "}
+            <br />
+            <small>
+              Don't have an account?{" "}
               <Link className="text-primary" to="/signup">
-                Create New Account
+                Sign Up
               </Link>
             </small>
           </p>

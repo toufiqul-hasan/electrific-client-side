@@ -10,7 +10,7 @@ const Users = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("https://stormy-taiga-16041.herokuapp.com/user", {
+    fetch("https://electrific.herokuapp.com/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -32,13 +32,19 @@ const Users = () => {
         <table className="table table-zebra w-full">
           <thead>
             <tr>
+              <th className="text-center">No.</th>
               <th>Email</th>
-              <th>Make Admin</th>
+              <th className="text-center">Action</th>
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
-              <UserRow key={user._id} user={user} refetch={refetch}></UserRow>
+            {users.map((user, index) => (
+              <UserRow
+                key={user._id}
+                index={index}
+                user={user}
+                refetch={refetch}
+              ></UserRow>
             ))}
           </tbody>
         </table>

@@ -3,10 +3,8 @@ import { toast } from "react-toastify";
 import { confirmAlert } from "react-confirm-alert";
 
 const ManageOrders = ({ order, refetch, index }) => {
-  const { _id, name, tools, orderQuantity, address, phone} = order;
-
+  const { _id, name, tools, orderQuantity, address, phone } = order;
   const submit = () => {
-    
     confirmAlert({
       title: "Do you really want to cancel the order?",
       buttons: [
@@ -22,7 +20,7 @@ const ManageOrders = ({ order, refetch, index }) => {
   };
 
   const handleCancelOrder = () => {
-    const url = `https://stormy-taiga-16041.herokuapp.com/order/${_id}`;
+    const url = `https://electrific.herokuapp.com/order/${_id}`;
     fetch(url, {
       method: "DELETE",
     })
@@ -34,7 +32,7 @@ const ManageOrders = ({ order, refetch, index }) => {
   };
 
   const handleOrderStatus = () => {
-    const url = `https://stormy-taiga-16041.herokuapp.com/order/${_id}`;
+    const url = `https://electrific.herokuapp.com/order/${_id}`;
     fetch(url, {
       method: "PUT",
     })

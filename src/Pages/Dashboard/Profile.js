@@ -8,6 +8,7 @@ import axiosPrivate from "../../api/axiosPrivate";
 import UserInfo from "./UserInfo";
 
 const Profile = () => {
+  
   const [reload, setReload] = useState(true);
   const [userInfo, setUserInfo] = useState([]);
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Profile = () => {
 
     const info = { email, name, education, location, phone, social };
 
-    fetch("https://stormy-taiga-16041.herokuapp.com/user-info", {
+    fetch("https://electrific.herokuapp.com/user-info", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -42,7 +43,7 @@ const Profile = () => {
   useEffect(() => {
     const getUserInfo = async () => {
       const email = user.email;
-      const url = `https://stormy-taiga-16041.herokuapp.com/user-info?email=${email}`;
+      const url = `https://electrific.herokuapp.com/user-info?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setUserInfo(data);

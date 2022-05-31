@@ -3,10 +3,6 @@ import React from "react";
 const Blog = () => {
   return (
     <div className="container mx-auto my-20 text-justify">
-      <div className="text-center text-3xl font-bold">
-        <h1>Question & Answer</h1>
-      </div>
-      <hr />
       <div className="card">
         <div className="card-body">
           <h2 className="card-title">

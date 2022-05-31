@@ -11,7 +11,7 @@ const Purchase = () => {
   const [tool, setTool] = useState({});
 
   useEffect(() => {
-    const url = `https://stormy-taiga-16041.herokuapp.com/product/${id}`;
+    const url = `https://electrific.herokuapp.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -26,7 +26,7 @@ const Purchase = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("https://stormy-taiga-16041.herokuapp.com/order", {
+    fetch("https://electrific.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -44,9 +44,9 @@ const Purchase = () => {
 
   return (
     <>
-      <div className="hero min-h-screen">
+      <div className="hero mt-20">
         <div className="hero-content flex-col lg:flex-row">
-          <img className="rounded-lg" src={tool.image} alt="" />
+          <img className="rounded-lg w-96" src={tool.image} alt="" />
           <div>
             <h1 className="text-5xl font-bold">{tool.name}</h1>
             <p className="py-6">{tool.description}</p>

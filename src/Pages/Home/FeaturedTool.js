@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const FeaturedTool = ({ product, reload, setReload }) => {
+  
   const {
     _id,
     name,
@@ -19,7 +20,7 @@ const FeaturedTool = ({ product, reload, setReload }) => {
   };
 
   return (
-    <div className="card shadow-2xl">
+    <div className="card shadow-lg">
       <figure>
         <img className="rounded-lg w-full" src={image} alt="" />
       </figure>

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
   const { _id, tools, price, orderQuantity } = orderInfo;
-
   const submit = () => {
     confirmAlert({
       title: "Do you really want to cancel the order?",
@@ -22,7 +21,7 @@ const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
   };
 
   const handleCancelOrder = () => {
-    const url = `https://stormy-taiga-16041.herokuapp.com/order/${_id}`;
+    const url = `https://electrific.herokuapp.com/order/${_id}`;
     fetch(url, {
       method: "DELETE",
     })
@@ -34,7 +33,7 @@ const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
   };
   return (
     <tr>
-      <th>{index + 1}</th>
+      <th className="text-center">{index + 1}</th>
       <td>{tools}</td>
       <td className="text-center">{price}</td>
       <td className="text-center">{orderQuantity}</td>

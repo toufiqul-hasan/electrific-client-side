@@ -2,16 +2,21 @@
 
 ## Live Link: https://electrific-bd.web.app
 
-## Features & Functionality:
+## Client Side Code: https://github.com/toufiqul-hasan/royal-auto-client-side
 
-- This is a electrical tools manufacturer website.
-- User can easily create their user account.
-- After successfully account creation user can order their desire product.
-- Only logged in user can order product.
+## Server Side Code: https://github.com/toufiqul-hasan/royal-auto-server-side
+
+## Features:
+
+- It's a electrical tools manufacturer website.
+- User can easily create their account.
+- After successfully creating an account, users can order their desire product.
+- Only logged in users can order product.
 - User can also log in using Google.
+- User can also reset their login password.
 - After login user can edit their profile, see all their orders and give reviews.
-- Admin can manage orders, manage products, add products and create another admin.
-- User can make payment using online payment gateway.
+- User can make payment using credit card.
+- Admin can manage all orders, add products, manage products and make another user an admin.
 
 ## Technologies Used In Client Side:
 
@@ -27,7 +32,6 @@
 - [React Query](https://react-query.tanstack.com)
 - [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
 - [Stripe](https://stripe.com)
-- [Heroicons](https://heroicons.com/)
 
 ## Technologies Used In Server Side:
 

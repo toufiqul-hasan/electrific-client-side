@@ -9,7 +9,7 @@ const ManageOrder = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch("https://stormy-taiga-16041.herokuapp.com/orders", {
+    fetch("https://electrific.herokuapp.com/orders", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
@@ -40,7 +40,7 @@ const ManageOrder = () => {
               <th>Quantity</th>
               <th>Order Status</th>
               <th>Payment Status</th>
-              <th>Cancel Order</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>

@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const axiosPrivate = axios.create({});
+
 axiosPrivate.interceptors.request.use(
   function (config) {
     // Do something before request is sent
@@ -28,8 +29,7 @@ axiosPrivate.interceptors.response.use(
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
     if (error.response.status === 403) {
-      // refresh token
-      // send to the server
+      // refresh token, send to the server
     }
     return Promise.reject(error);
   }

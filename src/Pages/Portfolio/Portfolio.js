@@ -21,19 +21,19 @@ const Portfolio = () => {
           </p>
           <p>
             <b>Expert:</b> JavaScript, ES6, React, React Router, React
-            Bootstrap, HTML, CSS, Bootstrap.
+            Bootstrap, HTML, CSS, Bootstrap, Tailwind CSS.
           </p>
           <p>
             <b>Comfortable:</b> Node.js, Express.js, MongoDB, Rest API, Context
             API, Firebase Authentication.
           </p>
           <p>
-            <b>Familiar:</b> Tailwind CSS, JSON Web Token (JWT), Google Map,
+            <b>Familiar:</b> JSON Web Token (JWT), Google Map,
             Wordpress.
           </p>
           <p>
             <b>Tools:</b> Git, Create React App, Visual Studio Code, Chrome Dev
-            Tool, GitHub, Netlify, Firebase, Figma, Photoshop, Heroku.
+            Tool, GitHub, Netlify, Firebase, Heroku, Figma, Photoshop.
           </p>
           <p className="text-xl">
             <b>Projects:</b>
@@ -65,10 +65,10 @@ const Portfolio = () => {
             <a
               className="link-hover"
               target="_blank"
-              href="https://dental-plus-dr.web.app"
+              href="https://simple-rest-to-do-app.web.app"
               rel="noreferrer"
             >
-              Dental Plus - Dental Treatment Website
+              To Do App - A Simple Task Organizer Website
             </a>
           </p>
         </div>

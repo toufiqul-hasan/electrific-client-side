@@ -1,6 +1,6 @@
 import React from "react";
-import useProducts from "../../Hooks/useProducts";
 import Loading from "../../Shared/Loading";
+import useProducts from "../../Hooks/useProducts";
 import FeaturedTool from "../Home/FeaturedTool";
 
 const Shop = () => {

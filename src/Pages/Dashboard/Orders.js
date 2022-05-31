@@ -15,7 +15,7 @@ const Orders = () => {
   useEffect(() => {
     const getOrderInfo = async () => {
       const email = user.email;
-      const url = `https://stormy-taiga-16041.herokuapp.com/order?email=${email}`;
+      const url = `https://electrific.herokuapp.com/order?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setOrderInfo(data);
@@ -40,12 +40,12 @@ const Orders = () => {
         <table className="table w-full">
           <thead>
             <tr>
-              <th>No.</th>
+              <th className="text-center">No.</th>
               <th>Product Name</th>
-              <th className="text-center">Product Price</th>
-              <th className="text-center">Quantity</th>
-              <th className="text-center">Make Payment</th>
-              <th className="text-center">Cancel Order</th>
+              <th className="text-center">Price</th>
+              <th className="text-center">Order Quantity</th>
+              <th className="text-center">Payment Status</th>
+              <th className="text-center">Action</th>
             </tr>
           </thead>
           <tbody>

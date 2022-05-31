@@ -18,7 +18,7 @@ const Reviews = () => {
     const rating = event.target.rating.value;
     const info = { email, name, description, rating };
 
-    fetch("https://stormy-taiga-16041.herokuapp.com/user-review", {
+    fetch("https://electrific.herokuapp.com/user-review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -35,7 +35,7 @@ const Reviews = () => {
 
   useEffect(() => {
     const email = user.email;
-    const url = `https://stormy-taiga-16041.herokuapp.com/user-review?email=${email}`;
+    const url = `https://electrific.herokuapp.com/user-review?email=${email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setReviews(data));
@@ -65,7 +65,7 @@ const Reviews = () => {
       </div>
       <div className="text-center mt-5">
         <div className="text-2xl font-bold">
-          <h1>Add Review</h1>
+          <h1>Give Review</h1>
         </div>
         <div className="mt-5">
           <form onSubmit={handleReview}>

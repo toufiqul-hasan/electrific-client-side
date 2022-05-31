@@ -4,6 +4,7 @@ import ManageProducts from "./ManageProducts";
 import Loading from "../../Shared/Loading";
 
 const ManageProduct = () => {
+  
   const [products, loading, reload, setReload] = useProducts([]);
   return (
     <>
@@ -28,7 +29,7 @@ const ManageProduct = () => {
                   <th className="text-center">Price</th>
                   <th className="text-center">Available Quantity</th>
                   <th className="text-center">Order Quantity</th>
-                  <th className="text-center">Delete</th>
+                  <th className="text-center">Action</th>
                 </tr>
               </thead>
               <tbody>

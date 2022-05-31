@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
   const { _id, name, email, price } = order;
 
   useEffect(() => {
-    fetch("https://stormy-taiga-16041.herokuapp.com/create-payment-intent", {
+    fetch("https://electrific.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -69,14 +69,14 @@ const CheckoutForm = ({ order }) => {
     } else {
       setCardError("");
       setTransactionId(paymentIntent.id);
-      setSuccess("Congrats! Your payment is completed.");
+      setSuccess("Congratulations! Your payment is completed.");
 
       //store payment on database
       const payment = {
         order: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://stormy-taiga-16041.herokuapp.com/order/${_id}`, {
+      fetch(`https://electrific.herokuapp.com/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
