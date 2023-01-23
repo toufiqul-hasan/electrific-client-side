@@ -2,9 +2,9 @@
 
 ## Live Website: https://electrific-bd.web.app
 
-## Client Side Code: https://github.com/toufiqul-hasan/royal-auto-client-side
+## Client Side Code: https://github.com/toufiqul-hasan/electrific-client-side
 
-## Server Side Code: https://github.com/toufiqul-hasan/royal-auto-server-side
+## Server Side Code: https://github.com/toufiqul-hasan/electrific-server-side
 
 ## Features:
 
