@@ -38,6 +38,6 @@
 - [Cors](https://www.npmjs.com/package/cors)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 - [Express.js](https://expressjs.com)
-- [Heroku](https://www.heroku.com)
+- [Render](https://render.com)
 - [Json Web Token](https://jwt.io)
 - [MongoDB](https://www.mongodb.com)
