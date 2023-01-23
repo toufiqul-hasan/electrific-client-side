@@ -11,7 +11,7 @@ const Purchase = () => {
   const [tool, setTool] = useState({});
 
   useEffect(() => {
-    const url = `https://electrific.herokuapp.com/product/${id}`;
+    const url = `https://electrific.onrender.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -26,7 +26,7 @@ const Purchase = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("https://electrific.herokuapp.com/order", {
+    fetch("https://electrific.onrender.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

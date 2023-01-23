@@ -13,10 +13,9 @@ const stripePromise = loadStripe(
 );
 
 const Payment = () => {
-  
   const [user] = useAuthState(auth);
   const { id } = useParams();
-  const url = `https://electrific.herokuapp.com/order/${id}`;
+  const url = `https://electrific.onrender.com/order/${id}`;
 
   const { data: order, isLoading } = useQuery(["order", id], () =>
     fetch(url, {

@@ -7,7 +7,7 @@ const useProducts = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://electrific.herokuapp.com/product")
+    fetch("https://electrific.onrender.com/product")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

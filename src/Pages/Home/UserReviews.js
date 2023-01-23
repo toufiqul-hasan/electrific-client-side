@@ -6,7 +6,7 @@ const UserReviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    const url = `https://electrific.herokuapp.com/user-reviews`;
+    const url = `https://electrific.onrender.com/user-reviews`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setReviews(data));

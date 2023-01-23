@@ -15,7 +15,7 @@ const Orders = () => {
   useEffect(() => {
     const getOrderInfo = async () => {
       const email = user.email;
-      const url = `https://electrific.herokuapp.com/order?email=${email}`;
+      const url = `https://electrific.onrender.com/order?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setOrderInfo(data);

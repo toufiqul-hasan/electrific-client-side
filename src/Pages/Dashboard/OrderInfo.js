@@ -21,7 +21,7 @@ const OrderInfo = ({ orderInfo, index, reload, setReload }) => {
   };
 
   const handleCancelOrder = () => {
-    const url = `https://electrific.herokuapp.com/order/${_id}`;
+    const url = `https://electrific.onrender.com/order/${_id}`;
     fetch(url, {
       method: "DELETE",
     })

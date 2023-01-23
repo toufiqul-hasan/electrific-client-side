@@ -25,7 +25,7 @@ const AddProduct = () => {
       image,
     };
 
-    fetch("https://electrific.herokuapp.com/product", {
+    fetch("https://electrific.onrender.com/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",

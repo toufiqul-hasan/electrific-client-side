@@ -2,10 +2,9 @@ import React from "react";
 import { toast } from "react-toastify";
 
 const UserRow = ({ user, index, refetch }) => {
-  
   const { email, role } = user;
   const makeAdmin = () => {
-    fetch(`https://electrific.herokuapp.com/user/admin/${email}`, {
+    fetch(`https://electrific.onrender.com/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

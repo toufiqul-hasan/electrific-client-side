@@ -20,7 +20,7 @@ const UserInfo = ({ userInfo, reload, setReload }) => {
   };
 
   const handleUpdateInfo = () => {
-    const url = `https://electrific.herokuapp.com/user-info/${_id}`;
+    const url = `https://electrific.onrender.com/user-info/${_id}`;
     fetch(url, {
       method: "DELETE",
     })

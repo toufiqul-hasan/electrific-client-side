@@ -21,7 +21,7 @@ const ManageProducts = ({ product, index, reload, setReload }) => {
   };
 
   const handleProductDelete = () => {
-    const url = `https://electrific.herokuapp.com/product/${_id}`;
+    const url = `https://electrific.onrender.com/product/${_id}`;
     fetch(url, {
       method: "DELETE",
     })

@@ -9,7 +9,7 @@ const ManageOrder = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch("https://electrific.herokuapp.com/orders", {
+    fetch("https://electrific.onrender.com/orders", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

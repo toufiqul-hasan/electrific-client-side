@@ -5,7 +5,6 @@ import auth from "../../firebase.init";
 import Review from "./Review";
 
 const Reviews = () => {
-  
   const [reload, setReload] = useState(true);
   const [reviews, setReviews] = useState([]);
   const [user] = useAuthState(auth);
@@ -18,7 +17,7 @@ const Reviews = () => {
     const rating = event.target.rating.value;
     const info = { email, name, description, rating };
 
-    fetch("https://electrific.herokuapp.com/user-review", {
+    fetch("https://electrific.onrender.com/user-review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -35,7 +34,7 @@ const Reviews = () => {
 
   useEffect(() => {
     const email = user.email;
-    const url = `https://electrific.herokuapp.com/user-review?email=${email}`;
+    const url = `https://electrific.onrender.com/user-review?email=${email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setReviews(data));

@@ -20,7 +20,7 @@ const ManageOrders = ({ order, refetch, index }) => {
   };
 
   const handleCancelOrder = () => {
-    const url = `https://electrific.herokuapp.com/order/${_id}`;
+    const url = `https://electrific.onrender.com/order/${_id}`;
     fetch(url, {
       method: "DELETE",
     })
@@ -32,7 +32,7 @@ const ManageOrders = ({ order, refetch, index }) => {
   };
 
   const handleOrderStatus = () => {
-    const url = `https://electrific.herokuapp.com/order/${_id}`;
+    const url = `https://electrific.onrender.com/order/${_id}`;
     fetch(url, {
       method: "PUT",
     })

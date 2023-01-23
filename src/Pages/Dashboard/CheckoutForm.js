@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 const CheckoutForm = ({ order }) => {
-  
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
@@ -14,7 +13,7 @@ const CheckoutForm = ({ order }) => {
   const { _id, name, email, price } = order;
 
   useEffect(() => {
-    fetch("https://electrific.herokuapp.com/create-payment-intent", {
+    fetch("https://electrific.onrender.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -76,7 +75,7 @@ const CheckoutForm = ({ order }) => {
         order: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://electrific.herokuapp.com/order/${_id}`, {
+      fetch(`https://electrific.onrender.com/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
